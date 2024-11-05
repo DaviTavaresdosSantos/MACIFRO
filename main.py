@@ -4,7 +4,7 @@ Integrantes:  Davi Tavares dos Santos, WILLIAM CAVALCANTE DAMACENO, Júlia Marce
 from login import LoginAdm,LoginAluno
 from cadastro import CadastroAdm, CadastroAluno
 from carrinho import Carrinho
-from extra import red,fim, clear
+from extra import red,fim, clear,green
 from comida import Lanche,Almoco
 from bebida import Bebida
 
@@ -265,16 +265,17 @@ Olá, seja bem vindo ao MecIFRO, o que você deseja fazer?
                     print("\n===========LOGIN DE ALUNO===========")  
                     logar(LoginAluno, Aluno_conta)
                     if objeto_acessor.status == True:
+                        print(f'{green}Login realizado com sucesso{fim}')
                         Interface_Aluno()
-
                     else:
-                        pass
+                        print(f'{red}Valores incorretos{fim}')
                     
                 elif alternativa == '2':
                     clear()
                     print("\n===========LOGIN DE ADMIN===========")
                     logar(LoginAdm, ADM_conta)
                     if objeto_acessor.status == True:
+                        print(f'{green} Login realizado com sucesso{fim}')
                         Interface_ADM()
 
                     else:

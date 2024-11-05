@@ -15,11 +15,11 @@ class Sistemalogin(ABC): #superclasse,  parte-todo
     if len(lista) > 0:
       for c in lista:
         if c.getNome() == self.__nome and c.getSenha() == self.__senha:
-          print(f'{green}Login realizado com sucesso{fim}')
+          
           self.status = True
 
         else: 
-          print(f'{red}Valores incorretos{fim}')
+          pass 
           
 
     else:
