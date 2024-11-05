@@ -8,15 +8,19 @@ from extra import red,fim, clear,green
 from comida import Lanche,Almoco
 from bebida import Bebida
 
+from random import randint,choice
+import string
+
+
 
 #teste 
-salgadoAssado = Lanche(6,'Salgado Asssado','Temos de carne e preseunto e queijo,',1)
-salgadoFrito = Lanche(5,'Salgado Frito','Temos de carne e preseunto e queijo,',1)
-Pao_de_queijo = Lanche(6,'Pão de quijo','Temos apenas sabor queijo',1)
-refeicao = Almoco(5,'Almoco','coisa ai ',1,0)
-refrigerante = Bebida ("refrigerante", 'refrigerante de cola', 5.00 , 1 , 350)
-agua = Bebida ("agua", 'agua', 2.00 , 1 , 250)
-suco = Bebida ("suco", "uva" , 4.00 , 1 , 450)
+salgadoAssado = Lanche(6.0,'Salgado Asssado','Temos de carne e preseunto e queijo,',1)
+salgadoFrito = Lanche(5.0,'Salgado Frito','Temos de carne e preseunto e queijo,',1)
+Pao_de_queijo = Lanche(6.0,'Pão de quijo','Temos apenas sabor queijo',1)
+refeicao = Almoco(5.0,'Almoco','coisa ai ',1,0)
+refrigerante = Bebida ("refrigerante", 'refrigerante de cola', 5.0 , 1 , 350)
+agua = Bebida ("agua", 'agua', 2.0 , 1 , 250)
+suco = Bebida ("suco", "uva" , 4.0 , 1 , 450)
 
 aluno = CadastroAluno('davi','1234','usdfsfdsf')
 ADM = CadastroAdm('davi','1234','fdsfdf','101')
@@ -52,17 +56,21 @@ def logar(subclasse,lista: list):
 
 def Interface_Aluno():   #A classe "comprar" virou uma função
     Usuario_Carrinho = Carrinho()
+    
     while True: 
+        clear()
     
         Interface = input('''Informe uma opção: 
     1. Comida
     2. Bebida
     3. Carrinho
     4. Remover
-    5. Sair
+    5. Finalizar
+    6. Sair
     R:''')
         
         if Interface == '1':
+            clear()
             Interface_comida = input(''' De comida Temos: 
 1.Salgado frito
 2.salgado assado
@@ -88,10 +96,6 @@ R: ''')
                 Pao_de_queijo.atualizar()
                 Usuario_Carrinho.AdicionarItens(Pao_de_queijo)
 
-
-
-
-
             elif Interface_comida == '4':
                 peso = int(input('Nós informe o peso da sua comida: '))
                 horario = float(input('Informe o horário: '))
@@ -102,6 +106,7 @@ R: ''')
             
             
         elif Interface == '2':
+            clear()
             Interface_bebida = input(''' De Bebida Temos: 
 1.Coca_cola
 2.Água
@@ -118,7 +123,7 @@ R: ''')
                 quantidadeAtual = int(input('Informe a quantidade:'))
                 agua.qtd = quantidadeAtual
                 agua.atualizar()
-                agua.AdicionarItens(refrigerante)
+                Usuario_Carrinho.AdicionarItens(refrigerante)
 
             elif Interface_bebida == '3':
                 quantidadeAtual = int(input('Informe a quantidade:'))
@@ -131,12 +136,40 @@ R: ''')
                 pass
 
         elif Interface == '3':
+            clear()
             Usuario_Carrinho.ExibirIntens()  
 
         elif Interface == '4':
+            clear()
             Usuario_Carrinho.RemoverIntens()
 
         elif Interface == '5':
+            clear()
+            if len(Usuario_Carrinho.verificarTamanho())<= 0:
+                print('Carinho vazio, impossivel finalizar a compra!!')
+
+            else:
+                clear()
+                
+                print(f'''{green}Compra realizada com sucesos. Retirar na cantina
+Levar o código abaixo: {fim}''')
+                
+                
+                for c in range(11):
+                    letra = choice(string.ascii_lowercase)
+                    numero = randint(1,100)
+                    ordem = randint(1,10)
+                    if ordem >=5:
+                        print(letra, end = '')
+
+                    else:
+                        print(numero, end = '')  
+                menu()
+
+
+
+
+        elif Interface == '6':
             break
         else:
             print('Valor invalido')

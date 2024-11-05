@@ -1,26 +1,29 @@
 
 # Carrinho contém agregação de Login pois uma contém a outra, mas podem existem independentemente.
+from extra import red,green, fim, cyan
 class Carrinho: #parte-parte
     
-    def __init__(self) -> None:
+    def __init__(self):
         self.__lista_carrinho = []
     
     def ExibirIntens(self):
         if len(self.__lista_carrinho) == 0:
-            print('Não há itens no seu carrinho.')
+            print(f'{red}Não há itens no seu carrinho.{fim}')
 
         else:
-            print("Nome: valor(Final): quantidade:")
             index = 0
             
             for c in self.__lista_carrinho:
                 index+=1
                 if hasattr(c, 'qtd'): #verifica se a classe/objeto tem atributo
-                    print(f'{index} - {c.nome} : {c.valor_final} : {c.qtd}')
+                    print(f'{index} - Nome: {cyan}{c.nome}{fim},  Valor: {cyan}{c.valor_final}{fim}, Quantidade: {cyan}{c.qtd}{fim}')
                         
 
                 else:
-                    print(f'{index} - {c.nome} : {c.valor_final}')
+                    print(f'{index} - Nome: {cyan}{c.nome}{fim},  Valor: {cyan}{c.valor_final}{fim}')
+    
+    def verificarTamanho(self):
+        return self.__lista_carrinho
                     
 
 

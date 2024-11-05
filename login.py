@@ -20,7 +20,6 @@ class Sistemalogin(ABC): #superclasse,  parte-todo
 
         else: 
           pass 
-          
 
     else:
       print(f'{red}Não possue contas no banco dados {fim}')
