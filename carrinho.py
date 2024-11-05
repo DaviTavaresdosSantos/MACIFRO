@@ -1,5 +1,6 @@
 
-class Carrinho:
+# Carrinho contém agregação de Login pois uma contém a outra, mas podem existem independentemente.
+class Carrinho: #parte-parte
     
     def __init__(self) -> None:
         self.__lista_carrinho = []

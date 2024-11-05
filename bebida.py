@@ -1,3 +1,4 @@
+# Bebida contém agregação de Carrinho pois uma contém a outra, mas podem existem independentemente.
 class Bebida:
     def __init__(self,nome,descricao,valor,quantidade,ml):
         self.nome = nome

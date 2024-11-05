@@ -2,7 +2,9 @@ from abc import ABC
 from extra import fim, green, red
 
 
-class Sistemalogin(ABC): #Arrumado
+# SistemaLogin contém agregação de Carrinho pois uma contém a outra, mas podem existem independentemente.
+class Sistemalogin(ABC): #superclasse,  parte-todo
+
 
   def __init__(self, nome: str, senha: str, status: bool):
     self.__nome = nome
@@ -23,6 +25,7 @@ class Sistemalogin(ABC): #Arrumado
     else:
       print(f'{red}Não possue contas no banco dados {fim}')
 
+#LoginAluno contém herança de Login pois herdam vários atributos e métodos
 class LoginAluno(Sistemalogin):
   def __init__(self, nome, senha,status):
     super().__init__(nome, senha,status)
@@ -31,7 +34,7 @@ class LoginAluno(Sistemalogin):
   def verificar(self, lista):
     super().verificar(lista)
 
-  
+# LoginAdm contém herança de Login pois herdam vários atributos e métodos  
 class LoginAdm(Sistemalogin):#Arrumado
   def __init__(self, nome, senha,status,cod = '101'):
     super().__init__(nome, senha,status)
