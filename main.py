@@ -4,7 +4,7 @@ Integrantes:  Davi Tavares dos Santos, WILLIAM CAVALCANTE DAMACENO, Júlia Marce
 from login import LoginAdm,LoginAluno
 from cadastro import CadastroAdm, CadastroAluno
 from carrinho import Carrinho
-from extra import red,fim, clear,green
+from extra import red,fim, clear,green,yellow
 from comida import Lanche,Almoco
 from bebida import Bebida
 
@@ -13,7 +13,7 @@ import string
 
 
 
-#teste 
+
 salgadoAssado = Lanche(6.0,'Salgado Asssado','Temos de carne e preseunto e queijo,',1)
 salgadoFrito = Lanche(5.0,'Salgado Frito','Temos de carne e preseunto e queijo,',1)
 Pao_de_queijo = Lanche(6.0,'Pão de quijo','Temos apenas sabor queijo',1)
@@ -24,7 +24,7 @@ suco = Bebida ("suco", "uva" , 4.0 , 1 , 450)
 
 aluno = CadastroAluno('davi','1234','usdfsfdsf')
 ADM = CadastroAdm('davi','1234','fdsfdf','101')
-#teste
+
 
 
 ADM_conta = [ADM]
@@ -175,9 +175,7 @@ Levar o código abaixo: {fim}''')
 
 
 
-
-
-#interfface do administrador
+#interface do administrador
 def Interface_ADM():
     while True: 
         clear()
@@ -189,6 +187,8 @@ def Interface_ADM():
 3. Sair
 R: ''')
 
+
+#interface das comidas
         if Interface == '1':
             clear()
             Interface_comida = input('''=================================
@@ -221,7 +221,7 @@ Informe o novo valor do Salgado assado: '''))
                         ADM.alterar_Valor(salgadoAssado, valor)
                         break
                     except ValueError:
-                        print("Erro: Por favor, insira um número válido.")
+                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
 
             elif Interface_comida == '3':
                 clear()
@@ -233,7 +233,7 @@ Informe o novo valor do Pão de queijo: '''))
                         ADM.alterar_Valor(Pao_de_queijo, valor)
                         break
                     except ValueError:
-                        print("Erro: Por favor, insira um número válido.")
+                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
 
             elif Interface_comida == '4':
                 clear()
@@ -245,50 +245,54 @@ Informe o novo valor do Almoço: '''))
                         ADM.alterar_Valor(refeicao, valor)
                         break
                     except ValueError:
-                        print("Erro: Por favor, insira um número válido.")
+                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
 
 
 #interface das bebidas
 
-        elif Interface == '2': 
-            Interface_bebida = input('''Oque deseja alterar: 
+        elif Interface == '2':
+            clear() 
+            Interface_bebida = input('''Digiter qual bebida deseja alterar: 
 1. Coca cola
 2. Água
 3. Suco
 R: ''')
 
             if Interface_bebida == '1':
+                clear()
                 while True:
                     try:
                         valor = float(input('''==================================
-Valor atual da Coca cola: 
+Valor atual da Coca cola: 5
 Informe o novo valor da Coca cola: '''))
                         ADM.alterar_Valor(refrigerante, valor)
                         break
                     except ValueError:
-                        print("Erro: Por favor, insira um número válido.")
+                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
 
             elif Interface_bebida == '2':
+                clear()
                 while True:
                     try:
                         valor = float(input('''==================================
-Valor atual da Água: 
+Valor atual da Água: 2 
 Informe o novo valor da Água: '''))
                         ADM.alterar_Valor(agua, valor)
                         break
                     except ValueError:
-                        print("Erro: Por favor, insira um número válido.")
+                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
 
             elif Interface_bebida == '3':
+                clear()
                 while True:
                     try:
                         valor = float(input('''==================================
-Valor atual do Suco: 
+Valor atual do Suco: 4
 Informe o novo valor do Suco: '''))
                         ADM.alterar_Valor(suco, valor)
                         break
                     except ValueError:
-                        print("Erro: Por favor, insira um número válido.")
+                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
 
             else:
                 print('Valor inválido')
@@ -300,13 +304,15 @@ Informe o novo valor do Suco: '''))
             print('Valor inválido')
 
 
+
+#menu
 def menu():
     global objeto_acessor, ADM_conta, Aluno_conta, clear, finalizar
 
     while True:
         
-        print(f'''
-{'========== MENU =========='}
+        print(f'''{yellow}
+========================= MENU ========================={fim}
 Olá, seja bem vindo ao MecIFRO, o que você deseja fazer?
 1. Cadastrar 
 2. Login
@@ -347,7 +353,8 @@ Olá, seja bem vindo ao MecIFRO, o que você deseja fazer?
 {'========== LOGIN =========='}
 1. Login como aluno
 2. Login como admin
-3. Voltar ao menu''')
+3. Voltar ao menu
+''')
                 alternativa = input('Escolha uma opção: ')
                 if alternativa == '1':
                     clear()
