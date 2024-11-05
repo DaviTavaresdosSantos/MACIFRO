@@ -1,4 +1,4 @@
-'''Informática 2A, POO
+'''Turma: Informática 2A
 Integrantes:  Davi Tavares dos Santos, WILLIAM CAVALCANTE DAMACENO, Júlia Marcelly Braga Belchior, João Vitor Silva Maciel, Layra Vitória Mota Leal'''
 
 from login import LoginAdm,LoginAluno
