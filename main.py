@@ -22,6 +22,7 @@ aluno = CadastroAluno('davi','1234','usdfsfdsf')
 ADM = CadastroAdm('davi','1234','fdsfdf','101')
 #teste
 
+print("teste")
 
 ADM_conta = [ADM]
 Aluno_conta = [aluno] # Exemplo de conta
