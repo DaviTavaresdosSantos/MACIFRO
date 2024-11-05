@@ -58,7 +58,6 @@ def Interface_Aluno():   #A classe "comprar" virou uma função
     Usuario_Carrinho = Carrinho()
     
     while True: 
-        clear()
     
         Interface = input('''Informe uma opção: 
     1. Comida
@@ -70,7 +69,7 @@ def Interface_Aluno():   #A classe "comprar" virou uma função
     R:''')
         
         if Interface == '1':
-            clear()
+            clear
             Interface_comida = input(''' De comida Temos: 
 1.Salgado frito
 2.salgado assado
@@ -94,7 +93,7 @@ R: ''')
                 quantidadeAtual = int(input('Informe a quantidade:'))
                 Pao_de_queijo.qtd = quantidadeAtual
                 Pao_de_queijo.atualizar()
-                Usuario_Carrinho.AdicionarItens(Pao_de_queijo)
+                Usuario_Carrinho.AdicionarItens(Pao_de_queijo) 
 
             elif Interface_comida == '4':
                 peso = int(input('Nós informe o peso da sua comida: '))
@@ -178,70 +177,127 @@ Levar o código abaixo: {fim}''')
 
 
 
+#interfface do administrador
 def Interface_ADM():
     while True: 
+        clear()
+        print('''========Seja bem vindo a página de administração========''')
     
-        Interface = input('''Qual deseja alterar:
-    1. Comida
-    2. Bebida
-    3. Sair
-    R:''')
-        
-        if Interface == '1':
-            Interface_comida = input(''' Qual deseja alterar: 
-1.Salgado frito
-2.salgado assado
-3.Pão de queijo
-4.Almoço
+        Interface = input('''O que deseja alterar:
+1. Comida
+2. Bebida
+3. Sair
 R: ''')
+
+        if Interface == '1':
+            clear()
+            Interface_comida = input('''=================================
+Digite qual comida deseja alterar o valor: 
+1. Salgado frito
+2. Salgado assado
+3. Pão de queijo
+4. Almoço
+R: ''')
+
             if Interface_comida == '1':
-                valor = input('Informe o novo valor: ')
-                ADM.alterar_Valor(salgadoFrito,valor)
-            
+                clear()
+                while True:
+                    try:
+                        valor = float(input('''======================================
+Valor atual do Salgado frito: 5
+Informe o novo valor do Salgado frito: '''))
+                        ADM.alterar_Valor(salgadoFrito, valor)
+                        break
+                    except ValueError:
+                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
 
             elif Interface_comida == '2':
-                valor = input('Informe o novo valor: ')
-                ADM.alterar_Valor(salgadoAssado,valor)
-
+                clear()
+                while True:
+                    try:
+                        valor = float(input('''======================================
+Valor atual do Salgado assado: 6
+Informe o novo valor do Salgado assado: '''))
+                        ADM.alterar_Valor(salgadoAssado, valor)
+                        break
+                    except ValueError:
+                        print("Erro: Por favor, insira um número válido.")
 
             elif Interface_comida == '3':
-                valor = input('Informe o novo valor: ')
-                ADM.alterar_Valor(Pao_de_queijo,valor)
+                clear()
+                while True:
+                    try:
+                        valor = float(input('''======================================
+Valor atual do Pão de queijo: 6
+Informe o novo valor do Pão de queijo: '''))
+                        ADM.alterar_Valor(Pao_de_queijo, valor)
+                        break
+                    except ValueError:
+                        print("Erro: Por favor, insira um número válido.")
 
             elif Interface_comida == '4':
-                valor = input('Informe o novo valor: ')
-                ADM.alterar_Valor(refeicao,valor)
-            
-        elif Interface == '2': #Apenas quando bebida estiver pronto.
-            Interface_bebida = input(''' Qual deseja alterar: 
-1.Coca_cola
-2.Água
-3.Suco
+                clear()
+                while True:
+                    try:
+                        valor = float(input('''==================================
+Valor atual do Almoço: 5
+Informe o novo valor do Almoço: '''))
+                        ADM.alterar_Valor(refeicao, valor)
+                        break
+                    except ValueError:
+                        print("Erro: Por favor, insira um número válido.")
+
+
+#interface das bebidas
+
+        elif Interface == '2': 
+            Interface_bebida = input('''Oque deseja alterar: 
+1. Coca cola
+2. Água
+3. Suco
 R: ''')
-            
+
             if Interface_bebida == '1':
-                valor = input('Informe o novo valor: ')
-                ADM.alterar_Valor(refrigerante,valor)
+                while True:
+                    try:
+                        valor = float(input('''==================================
+Valor atual da Coca cola: 
+Informe o novo valor da Coca cola: '''))
+                        ADM.alterar_Valor(refrigerante, valor)
+                        break
+                    except ValueError:
+                        print("Erro: Por favor, insira um número válido.")
 
             elif Interface_bebida == '2':
-                valor = input('Informe o novo valor: ')
-                ADM.alterar_Valor(agua,valor)
+                while True:
+                    try:
+                        valor = float(input('''==================================
+Valor atual da Água: 
+Informe o novo valor da Água: '''))
+                        ADM.alterar_Valor(agua, valor)
+                        break
+                    except ValueError:
+                        print("Erro: Por favor, insira um número válido.")
 
             elif Interface_bebida == '3':
-                valor = input('Informe o novo valor: ')
-                ADM.alterar_Valor(suco,valor)
+                while True:
+                    try:
+                        valor = float(input('''==================================
+Valor atual do Suco: 
+Informe o novo valor do Suco: '''))
+                        ADM.alterar_Valor(suco, valor)
+                        break
+                    except ValueError:
+                        print("Erro: Por favor, insira um número válido.")
 
             else:
-                print('Valor invalido')
+                print('Valor inválido')
                 pass
 
         elif Interface == '3':
             break
         else:
-            print('Valor invalido')
-
-
-
+            print('Valor inválido')
 
 
 def menu():
@@ -325,4 +381,3 @@ Olá, seja bem vindo ao MecIFRO, o que você deseja fazer?
             print(f'{red}Opção inválida. Tente novamente.{fim}')
 
 menu()
-
