@@ -9,6 +9,7 @@ class Carrinho: #parte-parte
     def ExibirIntens(self):
         if len(self.__lista_carrinho) == 0:
             print(f'{red}Não há itens no seu carrinho.{fim}')
+            return False
 
         else:
             index = 0
@@ -32,9 +33,11 @@ class Carrinho: #parte-parte
     
 
     def RemoverIntens(self,):
-        self.ExibirIntens()
-        remover = int(input('informe o valo do item:'))
-        if remover <=0:
-            print('Valor indisponivel')
-        else: 
-            self.__lista_carrinho.pop(remover-1)
+        if self.ExibirIntens() == True:
+            remover = int(input('informe o valo do item:'))
+            if remover <=0:
+                print('Valor indisponivel')
+            else: 
+                self.__lista_carrinho.pop(remover-1)
+
+        
