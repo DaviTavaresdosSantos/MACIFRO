@@ -4,16 +4,15 @@ Integrantes:  Davi Tavares dos Santos, WILLIAM CAVALCANTE DAMACENO, Júlia Marce
 from login import LoginAdm,LoginAluno
 from cadastro import CadastroAdm, CadastroAluno
 from carrinho import Carrinho
-from extra import red,fim, clear,green,yellow
+from extra import red,fim, clear,green
 from comida import Lanche,Almoco
 from bebida import Bebida
-
 from random import randint,choice
 import string
 
 
 
-
+#teste 
 salgadoAssado = Lanche(6.0,'Salgado Asssado','Temos de carne e preseunto e queijo,',1)
 salgadoFrito = Lanche(5.0,'Salgado Frito','Temos de carne e preseunto e queijo,',1)
 Pao_de_queijo = Lanche(6.0,'Pão de quijo','Temos apenas sabor queijo',1)
@@ -24,7 +23,7 @@ suco = Bebida ("suco", "uva" , 4.0 , 1 , 450)
 
 aluno = CadastroAluno('davi','1234','usdfsfdsf')
 ADM = CadastroAdm('davi','1234','fdsfdf','101')
-
+#teste
 
 
 ADM_conta = [ADM]
@@ -58,124 +57,128 @@ def Interface_Aluno():   #A classe "comprar" virou uma função
     Usuario_Carrinho = Carrinho()
     
     while True: 
-    
-        Interface = input('''Informe uma opção: 
-    1. Comida
-    2. Bebida
-    3. Carrinho
-    4. Remover
-    5. Finalizar
-    6. Sair
-    R:''')
-        
-        if Interface == '1':
-            clear
-            Interface_comida = input(''' De comida Temos: 
-1.Salgado frito
-2.salgado assado
-3.Pão de queijo
-4.Almoço
-R: ''')
-            if Interface_comida == '1':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                salgadoFrito.qtd = quantidadeAtual
-                salgadoFrito.atualizar()
-                Usuario_Carrinho.AdicionarItens(salgadoFrito)
+        try:
+            Interface = input('''Informe uma opção: 
+        1. Comida
+        2. Bebida
+        3. Carrinho
+        4. Remover
+        5. Finalizar
+        6. Sair
+        R:''')
             
+            if Interface == '1':
+                clear
+                Interface_comida = input(''' De comida Temos: 
+    1.Salgado frito
+    2.salgado assado
+    3.Pão de queijo
+    4.Almoço
+    R: ''')
+                if Interface_comida == '1':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    salgadoFrito.qtd = quantidadeAtual
+                    salgadoFrito.atualizar()
+                    Usuario_Carrinho.AdicionarItens(salgadoFrito)
+                
 
-            elif Interface_comida == '2':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                salgadoAssado.qtd = quantidadeAtual
-                salgadoAssado.atualizar()
-                Usuario_Carrinho.AdicionarItens(salgadoAssado)
+                elif Interface_comida == '2':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    salgadoAssado.qtd = quantidadeAtual
+                    salgadoAssado.atualizar()
+                    Usuario_Carrinho.AdicionarItens(salgadoAssado)
 
-            elif Interface_comida == '3':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                Pao_de_queijo.qtd = quantidadeAtual
-                Pao_de_queijo.atualizar()
-                Usuario_Carrinho.AdicionarItens(Pao_de_queijo) 
+                elif Interface_comida == '3':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    Pao_de_queijo.qtd = quantidadeAtual
+                    Pao_de_queijo.atualizar()
+                    Usuario_Carrinho.AdicionarItens(Pao_de_queijo) 
 
-            elif Interface_comida == '4':
-                peso = int(input('Nós informe o peso da sua comida: '))
-                horario = float(input('Informe o horário: '))
-                refeicao.Peso = peso
-                refeicao.horario = horario
-                refeicao.atualizar()
-                Usuario_Carrinho.AdicionarItens(refeicao)
-            
-            
-        elif Interface == '2':
-            clear()
-            Interface_bebida = input(''' De Bebida Temos: 
-1.Coca_cola
-2.Água
-3.Suco
-R: ''')
-            
-            if Interface_bebida == '1':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                refrigerante.qtd = quantidadeAtual
-                refrigerante.atualizar()
-                Usuario_Carrinho.AdicionarItens(refrigerante)
-
-            elif Interface_bebida == '2':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                agua.qtd = quantidadeAtual
-                agua.atualizar()
-                Usuario_Carrinho.AdicionarItens(refrigerante)
-
-            elif Interface_bebida == '3':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                suco.qtd = quantidadeAtual
-                suco.atualizar()
-                Usuario_Carrinho.AdicionarItens(suco)
-
-            else:
-                print('Valor invalido')
-                pass
-
-        elif Interface == '3':
-            clear()
-            Usuario_Carrinho.ExibirIntens()  
-
-        elif Interface == '4':
-            clear()
-            Usuario_Carrinho.RemoverIntens()
-
-        elif Interface == '5':
-            clear()
-            if len(Usuario_Carrinho.verificarTamanho())<= 0:
-                print('Carinho vazio, impossivel finalizar a compra!!')
-
-            else:
+                elif Interface_comida == '4':
+                    peso = int(input('Nós informe o peso da sua comida: '))
+                    horario = float(input('Informe o horário: '))
+                    refeicao.Peso = peso
+                    refeicao.horario = horario
+                    refeicao.atualizar()
+                    Usuario_Carrinho.AdicionarItens(refeicao)
+                
+                
+            elif Interface == '2':
                 clear()
+                Interface_bebida = input(''' De Bebida Temos: 
+    1.Coca_cola
+    2.Água
+    3.Suco
+    R: ''')
                 
-                print(f'''{green}Compra realizada com sucesos. Retirar na cantina
-Levar o código abaixo: {fim}''')
-                
-                
-                for c in range(11):
-                    letra = choice(string.ascii_lowercase)
-                    numero = randint(1,100)
-                    ordem = randint(1,10)
-                    if ordem >=5:
-                        print(letra, end = '')
+                if Interface_bebida == '1':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    refrigerante.qtd = quantidadeAtual
+                    refrigerante.atualizar()
+                    Usuario_Carrinho.AdicionarItens(refrigerante)
 
-                    else:
-                        print(numero, end = '')  
-                menu()
+                elif Interface_bebida == '2':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    agua.qtd = quantidadeAtual
+                    agua.atualizar()
+                    Usuario_Carrinho.AdicionarItens(refrigerante)
+
+                elif Interface_bebida == '3':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    suco.qtd = quantidadeAtual
+                    suco.atualizar()
+                    Usuario_Carrinho.AdicionarItens(suco)
+
+                else:
+                    print('Valor invalido')
+                    pass
+
+            elif Interface == '3':
+                clear()
+                Usuario_Carrinho.ExibirIntens()  
+
+            elif Interface == '4':
+                clear()
+                Usuario_Carrinho.RemoverIntens()
+
+            elif Interface == '5':
+                clear()
+                if len(Usuario_Carrinho.verificarTamanho())<= 0:
+                    print('Carinho vazio, impossivel finalizar a compra!!')
+
+                else:
+                    clear()
+                    
+                    print(f'''{green}Compra realizada com sucesos. Retirar na cantina
+    Levar o código abaixo: {fim}''')
+                    
+                    
+                    for c in range(11):
+                        letra = choice(string.ascii_lowercase)
+                        numero = randint(1,100)
+                        ordem = randint(1,10)
+                        if ordem >=5:
+                            print(letra, end = '')
+
+                        else:
+                            print(numero, end = '')  
+                    menu()
 
 
 
 
-        elif Interface == '6':
-            break
-        else:
-            print('Valor invalido')
+            elif Interface == '6':
+                break
+        
+
+        except ValueError:
+            print(f'{red}Valor informado não corresponde ao solicitado{fim}')
 
 
 
-#interface do administrador
+
+
+#interfface do administrador
 def Interface_ADM():
     while True: 
         clear()
@@ -187,8 +190,6 @@ def Interface_ADM():
 3. Sair
 R: ''')
 
-
-#interface das comidas
         if Interface == '1':
             clear()
             Interface_comida = input('''=================================
@@ -221,7 +222,7 @@ Informe o novo valor do Salgado assado: '''))
                         ADM.alterar_Valor(salgadoAssado, valor)
                         break
                     except ValueError:
-                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
+                        print("Erro: Por favor, insira um número válido.")
 
             elif Interface_comida == '3':
                 clear()
@@ -233,7 +234,7 @@ Informe o novo valor do Pão de queijo: '''))
                         ADM.alterar_Valor(Pao_de_queijo, valor)
                         break
                     except ValueError:
-                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
+                        print("Erro: Por favor, insira um número válido.")
 
             elif Interface_comida == '4':
                 clear()
@@ -245,54 +246,50 @@ Informe o novo valor do Almoço: '''))
                         ADM.alterar_Valor(refeicao, valor)
                         break
                     except ValueError:
-                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
+                        print("Erro: Por favor, insira um número válido.")
 
 
 #interface das bebidas
 
-        elif Interface == '2':
-            clear() 
-            Interface_bebida = input('''Digiter qual bebida deseja alterar: 
+        elif Interface == '2': 
+            Interface_bebida = input('''Oque deseja alterar: 
 1. Coca cola
 2. Água
 3. Suco
 R: ''')
 
             if Interface_bebida == '1':
-                clear()
                 while True:
                     try:
                         valor = float(input('''==================================
-Valor atual da Coca cola: 5
+Valor atual da Coca cola: 
 Informe o novo valor da Coca cola: '''))
                         ADM.alterar_Valor(refrigerante, valor)
                         break
                     except ValueError:
-                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
+                        print("Erro: Por favor, insira um número válido.")
 
             elif Interface_bebida == '2':
-                clear()
                 while True:
                     try:
                         valor = float(input('''==================================
-Valor atual da Água: 2 
+Valor atual da Água: 
 Informe o novo valor da Água: '''))
                         ADM.alterar_Valor(agua, valor)
                         break
                     except ValueError:
-                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
+                        print("Erro: Por favor, insira um número válido.")
 
             elif Interface_bebida == '3':
-                clear()
                 while True:
                     try:
                         valor = float(input('''==================================
-Valor atual do Suco: 4
+Valor atual do Suco: 
 Informe o novo valor do Suco: '''))
                         ADM.alterar_Valor(suco, valor)
                         break
                     except ValueError:
-                        print((f'{red}Erro: Por favor, insira um número válido.{fim}'))
+                        print("Erro: Por favor, insira um número válido.")
 
             else:
                 print('Valor inválido')
@@ -304,19 +301,19 @@ Informe o novo valor do Suco: '''))
             print('Valor inválido')
 
 
-
-#menu
 def menu():
     global objeto_acessor, ADM_conta, Aluno_conta, clear, finalizar
 
     while True:
         
-        print(f'''{yellow}
-========================= MENU ========================={fim}
+        print(f'''
+{'========== MENU =========='}
 Olá, seja bem vindo ao MecIFRO, o que você deseja fazer?
 1. Cadastrar 
 2. Login
 ''')
+
+   
         opcao = input('Escolha uma opção: ')
         
         if opcao == '1':
@@ -353,8 +350,7 @@ Olá, seja bem vindo ao MecIFRO, o que você deseja fazer?
 {'========== LOGIN =========='}
 1. Login como aluno
 2. Login como admin
-3. Voltar ao menu
-''')
+3. Voltar ao menu''')
                 alternativa = input('Escolha uma opção: ')
                 if alternativa == '1':
                     clear()
@@ -384,7 +380,5 @@ Olá, seja bem vindo ao MecIFRO, o que você deseja fazer?
                 else:
                     print(f'{red}Opção inválida. Tente novamente.{fim}')
             
-        else:
-            print(f'{red}Opção inválida. Tente novamente.{fim}')
 
 menu()

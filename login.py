@@ -12,7 +12,7 @@ class Sistemalogin(ABC): #superclasse,  parte-todo
     self.status = status
    
   def verificar(self, lista: list):  # mudar variavel 'lista' pela de vocês na hora da subclasse
-    if len(lista) > 0:
+    try:
       for c in lista:
         if c.getNome() == self.__nome and c.getSenha() == self.__senha:
           
@@ -21,7 +21,7 @@ class Sistemalogin(ABC): #superclasse,  parte-todo
         else: 
           pass 
 
-    else:
+    except:
       print(f'{red}Não possue contas no banco dados {fim}')
 
 #LoginAluno contém herança de Login pois herdam vários atributos e métodos
