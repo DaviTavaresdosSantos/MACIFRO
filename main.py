@@ -1,6 +1,7 @@
 '''Turma: Informática 2A
 Integrantes:  Davi Tavares dos Santos, WILLIAM CAVALCANTE DAMACENO, Júlia Marcelly Braga Belchior, João Vitor Silva Maciel, Layra Vitória Mota Leal'''
 
+'Importei em ramificações passadas'
 from login import LoginAdm,LoginAluno
 from cadastro import CadastroAdm, CadastroAluno
 from carrinho import Carrinho
@@ -181,7 +182,7 @@ def Interface_Aluno():   #A classe "comprar" virou uma função
 
 
 
-#interfface do administrador
+'Interface do administrador'
 def Interface_ADM():
     while True: 
         clear()

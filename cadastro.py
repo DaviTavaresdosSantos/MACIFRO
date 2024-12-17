@@ -2,6 +2,8 @@ from extra import fim, green, red
 from abc import ABC
 from comida import Comida
 
+
+
 class SistemaCadastro(ABC):# arrumado
 
   def __init__(self, nome: str, senha: str, email: str):
@@ -20,6 +22,7 @@ class SistemaCadastro(ABC):# arrumado
   
 
 # CadastroAluno contém herança de Cadastro, pois herdam vários atributos e métodos.
+'Fiz em ramificações passadas'
 class CadastroAluno(SistemaCadastro): #subclasse
 
   def __init__(self, nome, senha, email):

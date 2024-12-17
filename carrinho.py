@@ -1,5 +1,6 @@
 
 # Carrinho contém agregação de Login pois uma contém a outra, mas podem existem independentemente.
+'Eu fiz em uma ramificação passada'
 from extra import red,green, fim, cyan
 class Carrinho: #parte-parte
     
