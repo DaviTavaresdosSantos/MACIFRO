@@ -12,7 +12,7 @@ import string
 
 
 
-#teste 
+'Informações'
 salgadoAssado = Lanche(6.0,'Salgado Asssado','Temos de carne e preseunto e queijo,',1)
 salgadoFrito = Lanche(5.0,'Salgado Frito','Temos de carne e preseunto e queijo,',1)
 Pao_de_queijo = Lanche(6.0,'Pão de quijo','Temos apenas sabor queijo',1)
@@ -23,11 +23,13 @@ suco = Bebida ("suco", "uva" , 4.0 , 1 , 450)
 
 aluno = CadastroAluno('davi','1234','usdfsfdsf')
 ADM = CadastroAdm('davi','1234','fdsfdf','101')
-#teste
+'------------------------------------------------------------------------------------'
 
 
+'Contas'
 ADM_conta = [ADM]
 Aluno_conta = [aluno] # Exemplo de conta
+'---------------------------------------------------'
 
 
 
