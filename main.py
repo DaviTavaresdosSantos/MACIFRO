@@ -49,128 +49,128 @@ def logar(subclasse,lista: list):
   
   objeto_acessor = subclasse(nome, senha,False)
   objeto_acessor.verificar(lista)
-testr
-  
+
 
 
 def Interface_Aluno():   #A classe "comprar" virou uma função
     Usuario_Carrinho = Carrinho()
     
     while True: 
-    
-        Interface = input('''Informe uma opção: 
-    1. Comida
-    2. Bebida
-    3. Carrinho
-    4. Remover
-    5. Finalizar
-    6. Sair
-    R:''')
-        
-        if Interface == '1':
-            clear
-            Interface_comida = input(''' De comida Temos: 
-1.Salgado frito
-2.salgado assado
-3.Pão de queijo
-4.Almoço
-R: ''')
-            if Interface_comida == '1':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                salgadoFrito.qtd = quantidadeAtual
-                salgadoFrito.atualizar()
-                Usuario_Carrinho.AdicionarItens(salgadoFrito)
+        try:
+            Interface = input('''Informe uma opção: 
+        1. Comida
+        2. Bebida
+        3. Carrinho
+        4. Remover
+        5. Finalizar
+        6. Sair
+        R:''')
             
+            if Interface == '1':
+                clear
+                Interface_comida = input(''' De comida Temos: 
+    1.Salgado frito
+    2.salgado assado
+    3.Pão de queijo
+    4.Almoço
+    R: ''')
+                if Interface_comida == '1':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    salgadoFrito.qtd = quantidadeAtual
+                    salgadoFrito.atualizar()
+                    Usuario_Carrinho.AdicionarItens(salgadoFrito)
+                
 
-            elif Interface_comida == '2':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                salgadoAssado.qtd = quantidadeAtual
-                salgadoAssado.atualizar()
-                Usuario_Carrinho.AdicionarItens(salgadoAssado)
+                elif Interface_comida == '2':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    salgadoAssado.qtd = quantidadeAtual
+                    salgadoAssado.atualizar()
+                    Usuario_Carrinho.AdicionarItens(salgadoAssado)
 
-            elif Interface_comida == '3':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                Pao_de_queijo.qtd = quantidadeAtual
-                Pao_de_queijo.atualizar()
-                Usuario_Carrinho.AdicionarItens(Pao_de_queijo) 
+                elif Interface_comida == '3':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    Pao_de_queijo.qtd = quantidadeAtual
+                    Pao_de_queijo.atualizar()
+                    Usuario_Carrinho.AdicionarItens(Pao_de_queijo) 
 
-            elif Interface_comida == '4':
-                peso = int(input('Nós informe o peso da sua comida: '))
-                horario = float(input('Informe o horário: '))
-                refeicao.Peso = peso
-                refeicao.horario = horario
-                refeicao.atualizar()
-                Usuario_Carrinho.AdicionarItens(refeicao)
-            
-            
-        elif Interface == '2':
-            clear()
-            Interface_bebida = input(''' De Bebida Temos: 
-1.Coca_cola
-2.Água
-3.Suco
-R: ''')
-            
-            if Interface_bebida == '1':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                refrigerante.qtd = quantidadeAtual
-                refrigerante.atualizar()
-                Usuario_Carrinho.AdicionarItens(refrigerante)
+                elif Interface_comida == '4':
+                    peso = int(input('Nós informe o peso da sua comida: '))
+                    horario = float(input('Informe o horário: '))
+                    refeicao.Peso = peso
+                    refeicao.horario = horario
+                    refeicao.atualizar()
+                    Usuario_Carrinho.AdicionarItens(refeicao)
+                
+                
+            elif Interface == '2':
+                clear()
+                Interface_bebida = input(''' De Bebida Temos: 
+    1.Coca_cola
+    2.Água
+    3.Suco
+    R: ''')
+                
+                if Interface_bebida == '1':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    refrigerante.qtd = quantidadeAtual
+                    refrigerante.atualizar()
+                    Usuario_Carrinho.AdicionarItens(refrigerante)
 
-            elif Interface_bebida == '2':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                agua.qtd = quantidadeAtual
-                agua.atualizar()
-                Usuario_Carrinho.AdicionarItens(refrigerante)
+                elif Interface_bebida == '2':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    agua.qtd = quantidadeAtual
+                    agua.atualizar()
+                    Usuario_Carrinho.AdicionarItens(refrigerante)
 
-            elif Interface_bebida == '3':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                suco.qtd = quantidadeAtual
-                suco.atualizar()
-                Usuario_Carrinho.AdicionarItens(suco)
+                elif Interface_bebida == '3':
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    suco.qtd = quantidadeAtual
+                    suco.atualizar()
+                    Usuario_Carrinho.AdicionarItens(suco)
 
+                else:
+                    print('Valor invalido')
+                    pass
+
+            elif Interface == '3':
+                clear()
+                Usuario_Carrinho.ExibirIntens()  
+
+            elif Interface == '4':
+                clear()
+                Usuario_Carrinho.RemoverIntens()
+
+            elif Interface == '5':
+                clear()
+                if len(Usuario_Carrinho.verificarTamanho())<= 0:
+                    print('Carinho vazio, impossivel finalizar a compra!!')
+
+                else:
+                    clear()
+                    
+                    print(f'''{green}Compra realizada com sucesos. Retirar na cantina
+    Levar o código abaixo: {fim}''')
+                    
+                    
+                    for c in range(11):
+                        letra = choice(string.ascii_lowercase)
+                        numero = randint(1,100)
+                        ordem = randint(1,10)
+                        if ordem >=5:
+                            print(letra, end = '')
+
+                        else:
+                            print(numero, end = '')  
+                    menu()
+
+        except ValueError:
+            print("Só aceitamos números") 
+
+
+            elif Interface == '6':
+                break
             else:
                 print('Valor invalido')
-                pass
-
-        elif Interface == '3':
-            clear()
-            Usuario_Carrinho.ExibirIntens()  
-
-        elif Interface == '4':
-            clear()
-            Usuario_Carrinho.RemoverIntens()
-
-        elif Interface == '5':
-            clear()
-            if len(Usuario_Carrinho.verificarTamanho())<= 0:
-                print('Carinho vazio, impossivel finalizar a compra!!')
-
-            else:
-                clear()
-                
-                print(f'''{green}Compra realizada com sucesos. Retirar na cantina
-Levar o código abaixo: {fim}''')
-                
-                
-                for c in range(11):
-                    letra = choice(string.ascii_lowercase)
-                    numero = randint(1,100)
-                    ordem = randint(1,10)
-                    if ordem >=5:
-                        print(letra, end = '')
-
-                    else:
-                        print(numero, end = '')  
-                menu()
-
-
-
-
-        elif Interface == '6':
-            break
-        else:
-            print('Valor invalido')
 
 
 
