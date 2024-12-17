@@ -1,5 +1,6 @@
 
 # Carrinho contém agregação de Login pois uma contém a outra, mas podem existem independentemente.
+#commit:criando a lista no carrinho
 from extra import red,green, fim, cyan
 class Carrinho: #parte-parte
     
