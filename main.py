@@ -29,8 +29,8 @@ ADM = CadastroAdm('davi','1234','fdsfdf','101')
 
 'Contas' 
 ' Fiz em uma ramificação passada'
-ADM_conta = [ADM]
-Aluno_conta = [aluno] # Exemplo de conta
+ADM_conta = [ADM] #lista de contas ADM
+Aluno_conta = [aluno] # lista de contas aluno
 '---------------------------------------------------'
 
 
