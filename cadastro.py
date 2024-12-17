@@ -3,7 +3,7 @@ from abc import ABC
 from comida import Comida
 
 class SistemaCadastro(ABC):# arrumado
-
+#commit:
   def __init__(self, nome: str, senha: str, email: str):
     self.__nome = nome
     self.__email = email
@@ -20,6 +20,7 @@ class SistemaCadastro(ABC):# arrumado
   
 
 # CadastroAluno contém herança de Cadastro, pois herdam vários atributos e métodos.
+#commit: cadastrando aluno no cadatro
 class CadastroAluno(SistemaCadastro): #subclasse
 
   def __init__(self, nome, senha, email):
