@@ -22,9 +22,6 @@ class Carrinho: #parte-parte
 
                 else:
                     print(f'{index} - Nome: {cyan}{c.nome}{fim},  Valor: {cyan}{c.valor_final}{fim}')
-            return True
-
-
     
     def verificarTamanho(self):
         return self.__lista_carrinho
