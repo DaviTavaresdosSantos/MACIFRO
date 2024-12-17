@@ -64,7 +64,7 @@ def Interface_Aluno():   #A classe "comprar" virou uma função
     Usuario_Carrinho = Carrinho()
     
     while True: 
-        try:
+        try: #Eu fiz esse try
             Interface = input('''Informe uma opção: 
         1. Comida
         2. Bebida
