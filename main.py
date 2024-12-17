@@ -27,13 +27,15 @@ ADM = CadastroAdm('davi','1234','fdsfdf','101')
 '------------------------------------------------------------------------------------'
 
 
-'Contas'
+'Contas' 
+' Fiz em uma ramificação passada'
 ADM_conta = [ADM]
 Aluno_conta = [aluno] # Exemplo de conta
 '---------------------------------------------------'
 
 
 'Def de cadastro geral'
+'fiz em ramificações passadas'
 def cadastrar(subclasse,lista: list):
 
   nome = input('Digite seu nome:')
@@ -44,6 +46,7 @@ def cadastrar(subclasse,lista: list):
   
 
 'Def de login Geral'  
+'Fiz em ramiicações passadas'
 def logar(subclasse,lista: list):  
 
   global objeto_acessor
