@@ -163,14 +163,14 @@ def Interface_Aluno():   #A classe "comprar" virou uma função
                             print(numero, end = '')  
                     menu()
 
-        except ValueError:
-            print("Só aceitamos números") 
-
-
+        
             elif Interface == '6':
                 break
             else:
                 print('Valor invalido')
+            
+        except ValueError:
+            print("Só aceitamos números") 
 
 
 
