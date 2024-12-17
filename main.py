@@ -49,8 +49,7 @@ def logar(subclasse,lista: list):
   
   objeto_acessor = subclasse(nome, senha,False)
   objeto_acessor.verificar(lista)
-
-
+testr
   
 
 
