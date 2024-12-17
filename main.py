@@ -32,8 +32,7 @@ Aluno_conta = [aluno] # Exemplo de conta
 '---------------------------------------------------'
 
 
-
-
+'Def de cadastro geral'
 def cadastrar(subclasse,lista: list):
 
   nome = input('Digite seu nome:')
@@ -42,6 +41,8 @@ def cadastrar(subclasse,lista: list):
   objeto_acessor = subclasse(nome, senha, email)
   objeto_acessor.Cadastro(lista,objeto_acessor)
   
+
+'Def de login Geral'  
 def logar(subclasse,lista: list):  
 
   global objeto_acessor
