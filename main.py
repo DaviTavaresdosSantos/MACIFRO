@@ -170,7 +170,7 @@ def Interface_Aluno():   #A classe "comprar" virou uma função
                 print('Valor invalido')
             
         except ValueError:
-            print("Só aceitamos números") 
+            print("Só aceitamos números") #Adicionei o try e o except pois não aceitava letras.
 
 
 
