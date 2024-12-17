@@ -38,6 +38,7 @@ class CadastroAluno(SistemaCadastro): #subclasse
 
 
 # CadastroAdm contém herança de Cadastro, pois herdam vários atributos e métodos
+#commit: Cadastrando o aluno no cadastro no sistema 
 class CadastroAdm(SistemaCadastro): #subclasse
 
   def __init__(self, nome, senha, email,cod = '101'): # cod é a verificação do ADM
