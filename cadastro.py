@@ -60,3 +60,26 @@ class CadastroAdm(SistemaCadastro): #subclasse
     
   def alterar_Valor(self, item: object, Novo_valor):
     item.set_valor(Novo_valor)
+
+
+#Histórico do que eu já fiz.
+#1. Identifiquei as classes.
+#1.1 parte-parte.
+#1.2 subclasse.
+#1.3 parte-todo.
+#1.4 superclasse.
+
+#2. Identifiquei os relacionamentos.
+#2.1 Bebida tem agregação.
+#2.2 CadastroAluno contém herança.
+#2.3 CadastroAdm contém herança.
+#2.4 Carrinho contém agregação.
+#2.5 Comida contém agregação.
+#2.6 Lanche contém herança.
+#2.7 Almoco contém herança.
+
+#3. Identifiquei a classe que virou função.
+
+#4. Fiz cadastroADM e também ajudei a fazer os sistemas de login, tanto adm quanto adm.
+
+#Minha querida professora, infelizmente fui ver minha branch e ela não existia mais, mas deixei um histórico do que eu fiz para a senhora :D, tinha feito nas antigas ramificações.
