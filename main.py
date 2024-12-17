@@ -27,6 +27,7 @@ ADM = CadastroAdm('davi','1234','fdsfdf','101')
 
 
 
+#A coleção que usamos foi a lita, para a criação das contas
 ADM_conta = [ADM]
 Aluno_conta = [aluno] # Exemplo de conta
 
@@ -189,6 +190,7 @@ R: ''')
 
 
 #interface das comidas
+#Ja tinha feito o tratamento de exceção no 3ª bimestre, a senhora falou que ia aceitar :(
         if Interface == '1':
             clear()
             Interface_comida = input('''=================================
