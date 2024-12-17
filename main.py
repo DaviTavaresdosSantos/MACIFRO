@@ -76,18 +76,28 @@ def Interface_Aluno():   #A classe "comprar" virou uma função
 3.Pão de queijo
 4.Almoço
 R: ''')
-            if Interface_comida == '1':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                salgadoFrito.qtd = quantidadeAtual
-                salgadoFrito.atualizar()
-                Usuario_Carrinho.AdicionarItens(salgadoFrito)
-            
+            if Interface_comida == '1': 
+                try:
+
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    salgadoFrito.qtd = quantidadeAtual
+                    salgadoFrito.atualizar()
+                    Usuario_Carrinho.AdicionarItens(salgadoFrito)
+
+                except ValueError:
+                    print("valor inválidado")
+                
 
             elif Interface_comida == '2':
-                quantidadeAtual = int(input('Informe a quantidade:'))
-                salgadoAssado.qtd = quantidadeAtual
-                salgadoAssado.atualizar()
-                Usuario_Carrinho.AdicionarItens(salgadoAssado)
+                try:
+                    quantidadeAtual = int(input('Informe a quantidade:'))
+                    salgadoAssado.qtd = quantidadeAtual
+                    salgadoAssado.atualizar()
+                    Usuario_Carrinho.AdicionarItens(salgadoAssado)
+
+                except ValueError:
+                    print("valor error")
+            
 
             elif Interface_comida == '3':
                 quantidadeAtual = int(input('Informe a quantidade:'))
