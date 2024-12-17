@@ -1,13 +1,18 @@
 # Bebida contém agregação de Carrinho pois uma contém a outra, mas podem existem independentemente.
+# commit: inicialização da classe bebidas.
+
 class Bebida:
     def __init__(self,nome,descricao,valor,quantidade,ml):
         self.nome = nome
         self.descricao = descricao
         self.__valor = valor
         self.qtd = quantidade
-        self.ml = ml
-        self.valor_final = self.__valor * self.qtd
+        self.ml = ml 
+    #commit: método getter para valor 
+    def get_valor(self):
 
+        self.valor_final = self.__valor * self.qtd
+    
     def get_valor(self):
         return self.__valor
 
@@ -16,7 +21,7 @@ class Bebida:
 
     def atualizar(self):
         self.valor_final = self.__valor * self.qtd
-
+    #comit: métodos para exibir detalhes
 def exibir_detalhes (self):
     print(f"Bebida: {self.nome}")
     print(f"descricao:{self.descricao}")
