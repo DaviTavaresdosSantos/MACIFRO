@@ -33,6 +33,7 @@ class Lanche(Comida):
 
 
 # Almoco contém herança de Comida pois herdam vários atributos e métodos.
+#commit: cadatrando a herança que herdam atributos e os métodos
 class Almoco(Comida):
   def __init__(self, valor: int, nome: str, ingredientes: str, Peso: int, horario: int):
     super().__init__(valor, nome, ingredientes)
